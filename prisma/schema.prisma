@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Quote {
+  id              String   @id @default(uuid())
+  reference       String   @unique
+  serviceType     String
+  serviceCategory String?
+  propertyType    String
+  location        String
+  phone           String
+  email           String?
+  requirements    String?
+  preferredDate   String?
+  budgetRange     String?
+  dynamicAnswers  String   @default("{}")
+  status          String   @default("new")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status, createdAt])
+}
+
+model ServiceBooking {
+  id            String   @id @default(uuid())
+  reference     String   @unique
+  service       String
+  location      String
+  preferredDate String?
+  description   String?
+  contactName   String
+  contactPhone  String
+  contactEmail  String?
+  urgent        Boolean  @default(false)
+  status        String   @default("new")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([status, createdAt])
+}
+
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model Order {
+  id        String   @id @default(uuid())
+  reference String   @unique
+  items     String
+  total     Float
+  name      String
+  phone     String
+  email     String?
+  location  String
+  notes     String?
+  method    String   @default("whatsapp")
+  status    String   @default("new")
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
