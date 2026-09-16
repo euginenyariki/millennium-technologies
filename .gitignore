@@ -39,3 +39,4 @@ prisma/dev.db-journal
 prisma/*.db
 prisma/*.db-journal
 .neon
+.env*
