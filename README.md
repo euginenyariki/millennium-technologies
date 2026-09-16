@@ -36,6 +36,12 @@ npm run dev              # http://localhost:3000
 | `NEXT_PUBLIC_WHATSAPP` | Yes | WhatsApp number |
 | `NEXT_PUBLIC_LOCATION` | Yes | Office location |
 
+## Live
+
+- **Site**: https://millennium-technologies.vercel.app (Vercel free tier — $0/month)
+- **Database**: Neon free tier PostgreSQL — schema pushed to the `production` branch
+- **Repository**: https://github.com/euginenyariki/millennium-technologies
+
 ## Deploy (Vercel + Neon, $0/month)
 
 1. Create a free PostgreSQL database on [Neon](https://neon.tech), copy the pooled connection string.
@@ -44,12 +50,12 @@ npm run dev              # http://localhost:3000
    npm i -g vercel
    vercel login
    ```
-3. Set production env vars in Vercel (or in this repo's `.env.production` before `vercel --prod`):
+3. Set production env vars in Vercel:
    ```bash
    vercel env add DATABASE_PROVIDER   # postgresql
    vercel env add DATABASE_URL        # neon connection string
    vercel env add ADMIN_PASSWORD
-   vercel env add NEXT_PUBLIC_SITE_URL    # https://your-domain.co.ke
+   vercel env add NEXT_PUBLIC_SITE_URL    # https://millennium-technologies.vercel.app
    vercel env add NEXT_PUBLIC_SITE_NAME NEXT_PUBLIC_PHONE NEXT_PUBLIC_PHONE_DISPLAY NEXT_PUBLIC_EMAIL NEXT_PUBLIC_WHATSAPP NEXT_PUBLIC_LOCATION
    ```
 4. Push database schema:
@@ -60,6 +66,8 @@ npm run dev              # http://localhost:3000
    ```bash
    vercel --prod
    ```
+6. Auto-deploy on push: connect the GitHub repo in the Vercel dashboard
+   (Settings → Git), then every `git push` to `main` redeploys automatically.
 
 The build runs `scripts/set-db-provider.mjs` which rewrites `prisma/schema.prisma` to the correct provider before `prisma generate`, so the same repo works for both SQLite (dev) and PostgreSQL (prod).
 
