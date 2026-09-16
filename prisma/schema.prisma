@@ -65,7 +65,7 @@ model Order {
   name      String
   phone     String
   email     String?
-  location  String
+  location  String?
   notes     String?
   method    String   @default("whatsapp")
   status    String   @default("new")

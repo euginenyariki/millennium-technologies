@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/set-db-provider.mjs && prisma generate && next build",
+    "build": "node --env-file-if-exists=.env scripts/set-db-provider.mjs && prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "db:push": "prisma db push",
+    "db:push": "node --env-file-if-exists=.env scripts/set-db-provider.mjs && prisma db push",
     "db:generate": "prisma generate",
     "postinstall": "prisma generate"
   },
