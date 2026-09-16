@@ -1,28 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateRef } from "@/lib/utils";
+import { readJson, validateOrder } from "@/lib/validate";
 
 export async function POST(req: NextRequest) {
+  const parsed = await readJson<Record<string, unknown>>(req);
+  if (!parsed.ok) {
+    return NextResponse.json({ error: parsed.error }, { status: parsed.status });
+  }
+
+  const result = validateOrder(parsed.data);
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: result.status });
+  }
+
+  const o = result.data;
   try {
-    const body = await req.json();
-    const { items, total, name, phone, email, location, notes, method } = body;
-
-    if (!items || !Array.isArray(items) || items.length === 0 || !name || !phone) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
-
     const reference = generateRef("ORD");
     const order = await prisma.order.create({
       data: {
         reference,
-        items: JSON.stringify(items),
-        total: Number(total) || 0,
-        name,
-        phone,
-        email: email || null,
-        location: location || null,
-        notes: notes || null,
-        method: method || "checkout",
+        items: JSON.stringify(o.items),
+        total: o.total,
+        name: o.name,
+        phone: o.phone,
+        email: o.email || null,
+        location: o.location || null,
+        notes: o.notes || null,
+        method: o.method,
       },
     });
 

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CheckCircle2, Loader2, Mail } from "lucide-react";
+import { Honeypot } from "@/components/Honeypot";
 
 export default function ContactForm() {
+  const honeyRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -25,7 +27,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, subject, message }),
+        body: JSON.stringify({ name, email, phone, subject, message, _website: honeyRef.current?.value || "" }),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -55,6 +57,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={submit} className="rounded-3xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8">
+      <Honeypot ref={honeyRef} />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="c-name" className="mb-2 block text-sm font-medium text-gray-300">

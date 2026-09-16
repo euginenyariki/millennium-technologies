@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 import { formatPrice, whatsappLink } from "@/lib/utils";
 import { SITE } from "@/lib/site";
+import { Honeypot } from "@/components/Honeypot";
 
 export default function CheckoutPage() {
   const { items, total } = useCart();
+  const honeyRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -46,6 +48,7 @@ export default function CheckoutPage() {
           location,
           notes,
           method: "checkout",
+          _website: honeyRef.current?.value || "",
         }),
       });
       const data = await res.json();
@@ -102,6 +105,7 @@ export default function CheckoutPage() {
       </p>
 
       <form onSubmit={submit} className="mt-8 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8">
+        <Honeypot ref={honeyRef} />
         <h2 className="text-base font-semibold text-white">Items</h2>
         <ul className="mt-3 space-y-2 border-b border-white/[0.06] pb-5">
           {items.map((i) => (

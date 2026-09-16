@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
@@ -24,6 +24,7 @@ import {
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { whatsappLink } from "@/lib/utils";
+import { Honeypot } from "@/components/Honeypot";
 
 const flowGoal: Record<string, QuoteFlow> = {
   cctv: "cctv",
@@ -48,6 +49,7 @@ function QuoteWizard() {
   const params = useSearchParams();
   const productSlug = params.get("product") || "";
   const product = PRODUCTS.find((p) => p.slug === productSlug);
+  const honeyRef = useRef<HTMLInputElement>(null);
 
   const [step, setStep] = useState(0);
   const [flow, setFlow] = useState<QuoteFlow>(
@@ -138,6 +140,7 @@ function QuoteWizard() {
           budgetRange: budget,
           dynamicAnswers: answers,
           product: productSlug || undefined,
+          _website: honeyRef.current?.value || "",
         }),
       });
       const data = await res.json();
@@ -471,6 +474,8 @@ function QuoteWizard() {
             {error}
           </p>
         )}
+
+        <Honeypot ref={honeyRef} />
 
         <div className="mt-8 flex items-center justify-between gap-3">
           {step > 0 ? (

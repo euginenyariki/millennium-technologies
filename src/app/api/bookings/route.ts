@@ -1,37 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateRef } from "@/lib/utils";
+import { readJson, validateBooking } from "@/lib/validate";
 
 export async function POST(req: NextRequest) {
+  const parsed = await readJson<Record<string, unknown>>(req);
+  if (!parsed.ok) {
+    return NextResponse.json({ error: parsed.error }, { status: parsed.status });
+  }
+
+  const result = validateBooking(parsed.data);
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: result.status });
+  }
+
+  const b = result.data;
   try {
-    const body = await req.json();
-    const {
-      service,
-      location,
-      date,
-      description,
-      name,
-      phone,
-      email,
-      urgent,
-    } = body;
-
-    if (!service || !location || !name || !phone) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
-
     const reference = generateRef("BK");
     const booking = await prisma.serviceBooking.create({
       data: {
         reference,
-        service,
-        location,
-        preferredDate: date || null,
-        description: description || null,
-        contactName: name,
-        contactPhone: phone,
-        contactEmail: email || null,
-        urgent: Boolean(urgent),
+        service: b.service,
+        location: b.location,
+        preferredDate: b.date || null,
+        description: b.description || null,
+        contactName: b.name,
+        contactPhone: b.phone,
+        contactEmail: b.email || null,
+        urgent: b.urgent,
       },
     });
 

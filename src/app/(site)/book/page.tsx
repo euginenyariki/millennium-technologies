@@ -1,14 +1,16 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AlertTriangle, ArrowLeft, Calendar, CheckCircle2, Loader2 } from "lucide-react";
 import { BOOKING_SERVICES } from "@/lib/data";
 import { SITE } from "@/lib/site";
+import { Honeypot } from "@/components/Honeypot";
 
 function BookingFormInner() {
   const params = useSearchParams();
   const initial = params.get("service") || "";
+  const honeyRef = useRef<HTMLInputElement>(null);
 
   const [service, setService] = useState(initial);
   const [location, setLocation] = useState("");
@@ -34,7 +36,7 @@ function BookingFormInner() {
       const res = await fetch("/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ service, location, date, description, name, phone, email, urgent }),
+        body: JSON.stringify({ service, location, date, description, name, phone, email, urgent, _website: honeyRef.current?.value || "" }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong");
@@ -81,6 +83,7 @@ function BookingFormInner() {
       </p>
 
       <form onSubmit={submit} className="mt-10 grid gap-6 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8">
+        <Honeypot ref={honeyRef} />
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <label htmlFor="service" className="mb-2 block text-sm font-medium text-gray-300">
