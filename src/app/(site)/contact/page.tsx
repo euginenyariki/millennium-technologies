@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Millennium Technologies Ltd for quotations, service bookings, support and general enquiries. Nairobi, Kenya.",
+    "Get in touch with NexGuard Technologies Ltd for quotations, service bookings, support and general enquiries. Nairobi, Kenya.",
 };
 
 export default function ContactPage() {
@@ -64,7 +64,7 @@ export default function ContactPage() {
               <div className="card">
                 <h3 className="text-base font-semibold text-white">WhatsApp</h3>
                 <a
-                  href={whatsappLink(SITE.whatsapp, "Hello Millennium Technologies, I have an enquiry.")}
+                  href={whatsappLink(SITE.whatsapp, "Hello NexGuard Technologies, I have an enquiry.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 block text-sm text-gray-400 hover:text-green-400"

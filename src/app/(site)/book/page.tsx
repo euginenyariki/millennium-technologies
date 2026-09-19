@@ -164,7 +164,7 @@ function BookingFormInner() {
           )}
         </button>
         <p className="text-center text-xs text-gray-500">
-          By submitting you agree to be contacted by Millennium Technologies about this request.
+          By submitting you agree to be contacted by NexGuard Technologies about this request.
         </p>
       </form>
     </div>

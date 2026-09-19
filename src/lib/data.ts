@@ -417,7 +417,7 @@ export const PRODUCTS: Product[] = [
     availability: "in_stock",
     short: "Standard 125kHz EM RFID cards, PVC, pack of 50.",
     description:
-      "Standard EM4100-compatible 125kHz RFID cards for use with Millennium access readers. Sold in packs of 50; custom printing available on request.",
+      "Standard EM4100-compatible 125kHz RFID cards for use with NexGuard access readers. Sold in packs of 50; custom printing available on request.",
     specs: ["EM4100 / 125kHz", "PVC 85.6 × 54mm", "Print ready"],
     features: ["Writable", "Cost-effective"],
     warranty: "N/A",
@@ -593,7 +593,7 @@ export const PRODUCTS: Product[] = [
     availability: "in_stock",
     short: "Maintenance-free 12V 9Ah battery for energizer backup.",
     description:
-      "Maintenance-free sealed lead-acid 12V 9Ah battery that keeps the fence energized during power cuts. Compatible with Millennium energizers' battery-backup input.",
+      "Maintenance-free sealed lead-acid 12V 9Ah battery that keeps the fence energized during power cuts. Compatible with NexGuard energizers' battery-backup input.",
     specs: ["12V 9Ah", "Sealed maintenance-free", "Terminal M5"],
     features: ["Power-cut backup"],
     warranty: "6 months",
@@ -648,7 +648,7 @@ export const PRODUCTS: Product[] = [
     availability: "in_stock",
     short: "433MHz rolling-code 4-button remote for gate and barrier control.",
     description:
-      "A 433MHz rolling-code 4-channel remote that pairs with Millennium gate controllers. Compact case with high-visibility buttons and up to 100m range.",
+      "A 433MHz rolling-code 4-channel remote that pairs with NexGuard gate controllers. Compact case with high-visibility buttons and up to 100m range.",
     specs: ["433MHz", "Rolling code", "4 channels", "100m range"],
     features: ["Replacement remote", "Pairs to receiver"],
     warranty: "6 months",
@@ -1182,7 +1182,7 @@ export const SOLUTIONS: Solution[] = [
     number: "06",
     title: "Networking & Connectivity",
     subtitle: "Data & Connectivity Infrastructure",
-    desc: "Millennium Technologies Ltd delivers reliable networking solutions that support secure data communication and efficient business operations. We design, install, and maintain network infrastructure that keeps your organization connected and productive.",
+    desc: "NexGuard Technologies Ltd delivers reliable networking solutions that support secure data communication and efficient business operations. We design, install, and maintain network infrastructure that keeps your organization connected and productive.",
     points: [
       "Local Area Network (LAN) setup",
       "Structured cabling (data & voice)",

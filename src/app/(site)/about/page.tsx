@@ -24,20 +24,20 @@ const visionIcons: Record<string, LucideIcon> = {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Millennium Technologies Ltd — our vision, mission, values and the standards we uphold in security, technology and solar installations across Kenya.",
+    "Learn about NexGuard Technologies Ltd — our vision, mission, values and the standards we uphold in security, technology and solar installations across Kenya.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Millennium Technologies"
+        eyebrow="About NexGuard Technologies"
         title={
           <>
             Protecting assets. <span className="gradient-text">Powering connectivity.</span>
           </>
         }
-        sub="Millennium Technologies Ltd is a technology-driven company delivering smart security and reliable connectivity solutions for homes, businesses, and institutions."
+        sub="NexGuard Technologies Ltd is a technology-driven company delivering smart security and reliable connectivity solutions for homes, businesses, and institutions."
       />
 
       <section className="section-pad">
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-3xl border border-white/[0.07]">
               <Image
                 src="/images/photos/quality-work.jpg"
-                alt="Millennium Technologies team on site"
+                alt="NexGuard Technologies team on site"
                 width={960}
                 height={540}
                 className="aspect-[16/9] w-full object-cover"
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 Technology you can trust, workmanship you can see
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-gray-400 sm:text-base">
-                Millennium Technologies Ltd is a technology-driven company delivering smart security
+                NexGuard Technologies Ltd is a technology-driven company delivering smart security
                 and reliable connectivity solutions for homes, businesses, and institutions. We
                 specialize in CCTV surveillance, access control systems, electric fencing, solar,
                 networking, and computer maintenance — combining modern technology with professional

@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/photos/hero-bg.jpg"
-          alt="Security technology installation by Millennium Technologies"
+          alt="Security technology installation by NexGuard Technologies"
           fill
           priority
           className="object-cover"

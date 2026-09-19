@@ -46,7 +46,7 @@ export default function ProductActions({ product }: { product: Product }) {
   };
 
   const enquire = () => {
-    const text = `Hello Millennium Technologies,\n\nI would like to enquire about:\n\n${product.name}\nSKU: ${product.sku}\nPrice: ${formatPrice(product.price)}\n${install && product.installPrice ? `With professional installation (${formatPrice(product.installPrice)})` : "Without installation"}\nQuantity: ${qty}\n\nPlease advise availability and next steps.`;
+    const text = `Hello NexGuard Technologies,\n\nI would like to enquire about:\n\n${product.name}\nSKU: ${product.sku}\nPrice: ${formatPrice(product.price)}\n${install && product.installPrice ? `With professional installation (${formatPrice(product.installPrice)})` : "Without installation"}\nQuantity: ${qty}\n\nPlease advise availability and next steps.`;
     window.open(whatsappLink(SITE.whatsapp, text), "_blank");
   };
 

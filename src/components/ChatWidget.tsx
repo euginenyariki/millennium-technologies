@@ -18,7 +18,7 @@ const QUICK = [
 const INITIAL: Message[] = [
   {
     role: "assistant",
-    content: `Hi! 👋 I'm the Millennium Technologies assistant. Ask me about our CCTV, access control, electric fences, gate automation, solar, networking and IT — prices, products, or how to book. How can I help?`,
+    content: `Hi! 👋 I'm the NexGuard Technologies assistant. Ask me about our CCTV, access control, electric fences, gate automation, solar, networking and IT — prices, products, or how to book. How can I help?`,
   },
 ];
 
@@ -62,7 +62,7 @@ export default function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Sorry, I couldn't reach the assistant just now. Try again, or message us on WhatsApp at +254 703 621 053.",
+            "Sorry, I couldn't reach the assistant just now. Try again, or message us on WhatsApp at +254 794 273 995.",
         },
       ]);
       setOffline(true);
@@ -93,7 +93,7 @@ export default function ChatWidget() {
               <Bot className="h-5 w-5 text-green-400" />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-white">Millennium Assistant</p>
+              <p className="text-sm font-semibold text-white">NexGuard Assistant</p>
               <p className="flex items-center gap-1.5 text-[11px] text-gray-400">
                 <span className={cn("h-1.5 w-1.5 rounded-full", busy ? "animate-pulse bg-amber-400" : "bg-green-500")} />
                 {busy ? "Thinking…" : "Online · Powered by AI"}
@@ -165,7 +165,7 @@ export default function ChatWidget() {
             {offline && (
               <div className="mt-2 text-center">
                 <a
-                  href={whatsappLink(SITE.whatsapp, "Hello Millennium Technologies, I need help.")}
+                  href={whatsappLink(SITE.whatsapp, "Hello NexGuard Technologies, I need help.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[11px] text-green-400 hover:underline"

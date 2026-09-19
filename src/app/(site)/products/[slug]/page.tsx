@@ -64,7 +64,7 @@ export default async function ProductPage({ params }: Props) {
               <ProductImage art={product.art} slug={product.slug} label={product.name.split("—")[0].trim()} className="aspect-[16/9]" />
             </div>
             <p className="mt-3 text-center text-xs text-gray-500">
-              Representative photo of this equipment type — installed and maintained by Millennium Technologies.
+              Representative photo of this equipment type — installed and maintained by NexGuard Technologies.
             </p>
           </div>
 

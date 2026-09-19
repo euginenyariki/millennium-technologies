@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Millennium Technologies Ltd — integrated security, technology and solar solutions. CCTV, access control, electric fencing, gate automation, solar, networking, Starlink and IT support for homes, businesses and institutions in Kenya.",
+    "NexGuard Technologies — integrated security, technology and solar solutions. CCTV, access control, electric fencing, gate automation, solar, networking, Starlink and IT support for homes, businesses and institutions in Kenya.",
   keywords: [
     "CCTV installation Kenya",
     "smart security systems",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Starlink installation Kenya",
     "networking",
     "IT support",
-    "Millennium Technologies",
+    "NexGuard Technologies",
   ],
   authors: [{ name: SITE.name }],
   creator: SITE.name,

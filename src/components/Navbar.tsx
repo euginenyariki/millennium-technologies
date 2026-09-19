@@ -40,7 +40,7 @@ export default function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="shrink-0" aria-label="Millennium Technologies — Home">
+        <Link href="/" className="shrink-0" aria-label="NexGuard Technologies — Home">
           <Logo />
         </Link>
 

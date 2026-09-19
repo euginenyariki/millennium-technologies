@@ -62,7 +62,7 @@ export default function CheckoutPage() {
   };
 
   if (ref) {
-    const text = `Hello Millennium Technologies,\n\nOrder Reference: ${ref}\nName: ${name}\nPhone: ${phone}\nTotal: ${formatPrice(total)}\n\nPlease confirm my order and arrange delivery/pickup.`;
+    const text = `Hello NexGuard Technologies,\n\nOrder Reference: ${ref}\nName: ${name}\nPhone: ${phone}\nTotal: ${formatPrice(total)}\n\nPlease confirm my order and arrange delivery/pickup.`;
     return (
       <div className="mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center pt-28">
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/25 bg-green-500/10">

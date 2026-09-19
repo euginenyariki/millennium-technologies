@@ -16,7 +16,7 @@ export default function CartPage() {
           `${idx + 1}. ${i.name}${i.install ? " + Installation" : ""} × ${i.qty} — ${formatPrice(i.price + (i.install ? i.installPrice : 0))}`
       )
       .join("\n");
-    const text = `Hello Millennium Technologies,\n\nI would like to order:\n\n${lines}\n\nTotal: ${formatPrice(total)}\nPlease confirm availability and the next steps.`;
+    const text = `Hello NexGuard Technologies,\n\nI would like to order:\n\n${lines}\n\nTotal: ${formatPrice(total)}\nPlease confirm availability and the next steps.`;
     window.open(whatsappLink(SITE.whatsapp, text), "_blank");
   };
 

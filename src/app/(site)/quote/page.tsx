@@ -178,7 +178,7 @@ function QuoteWizard() {
           <a
             href={whatsappLink(
               SITE.whatsapp,
-              `Hello Millennium Technologies,\n\nReference: ${ref}\nI'd like to attach site photos/videos for my quotation request.`
+              `Hello NexGuard Technologies,\n\nReference: ${ref}\nI'd like to attach site photos/videos for my quotation request.`
             )}
             target="_blank"
             rel="noopener noreferrer"

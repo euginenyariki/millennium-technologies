@@ -48,7 +48,7 @@ export default function Edge() {
         <Reveal>
           <SectionHeader
             eyebrow="Why Choose Us"
-            title="The Millennium edge"
+            title="The NexGuard edge"
             sub="We combine technical expertise with a customer-first approach to deliver solutions that truly make a difference."
           />
         </Reveal>

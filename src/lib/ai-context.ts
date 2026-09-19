@@ -61,7 +61,7 @@ export function answerUser(messages: { role: string; content: string }[]): strin
   const has = (...words: string[]) => words.some((w) => q.includes(w));
 
   if (!q)
-    return "Hi! I'm Millennium's assistant. Ask me about our CCTV, access control, electric fencing, gate automation, solar, networking, Starlink or IT support — prices, warranties, installation, or how to get a quotation. For our details: " + CONTACT;
+    return "Hi! I'm NexGuard's assistant. Ask me about our CCTV, access control, electric fencing, gate automation, solar, networking, Starlink or IT support — prices, warranties, installation, or how to get a quotation. For our details: " + CONTACT;
 
   if (has("hi", "hello", "hey", "jambo", "habari", "sasa", "good morning", "good afternoon", "good evening")) {
     if (text.length < 30)
@@ -111,7 +111,7 @@ Try me: "How much is a CCTV camera?", "Electric fence price", "Solar inverter fo
   }
 
   if (has("buy", "order", "cart", "how to buy", "pay", "payment", "purchase")) {
-    return "To buy: add products to the cart and checkout (we confirm payment details by phone). For custom/quoted work, use /quote. Installation, delivery and payment terms vary per site — the team confirms at +254 703 621 053.";
+    return "To buy: add products to the cart and checkout (we confirm payment details by phone). For custom/quoted work, use /quote. Installation, delivery and payment terms vary per site — the team confirms at +254 794 273 995.";
   }
 
   if (has("deliver", "shipping", "how long", "when", "stock", "in stock", "available", "ready")) {

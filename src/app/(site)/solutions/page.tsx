@@ -29,7 +29,7 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/[0.07]">
                   <Image
                     src={s.photo}
-                    alt={`${s.title} — Millennium Technologies`}
+                    alt={`${s.title} — NexGuard Technologies`}
                     width={1024}
                     height={640}
                     className="aspect-[16/10] w-full object-cover"
