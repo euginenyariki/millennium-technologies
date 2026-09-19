@@ -1,6 +1,6 @@
-# Millennium Technologies Ltd — Website
+# NexGuard Technologies — Website
 
-Marketing site + lead-capture platform for Millennium Technologies Ltd (security, technology and solar solutions in Kenya).
+Marketing site + lead-capture platform for NexGuard Technologies Ltd (security, technology and solar solutions in Kenya).
 
 Built with Next.js 15 (App Router), React 19, Prisma, Tailwind CSS v4.
 
@@ -38,9 +38,9 @@ npm run dev              # http://localhost:3000
 
 ## Live
 
-- **Site**: https://millennium-technologies.vercel.app (Vercel free tier — $0/month)
+- **Site**: https://nexguard-technologies.vercel.app (Vercel free tier — $0/month)
 - **Database**: Neon free tier PostgreSQL — schema pushed to the `production` branch
-- **Repository**: https://github.com/euginenyariki/millennium-technologies
+- **Repository**: https://github.com/euginenyariki/nexguard-technologies
 
 ## Deploy (Vercel + Neon, $0/month)
 
@@ -55,7 +55,7 @@ npm run dev              # http://localhost:3000
    vercel env add DATABASE_PROVIDER   # postgresql
    vercel env add DATABASE_URL        # neon connection string
    vercel env add ADMIN_PASSWORD
-   vercel env add NEXT_PUBLIC_SITE_URL    # https://millennium-technologies.vercel.app
+   vercel env add NEXT_PUBLIC_SITE_URL    # https://nexguard-technologies.vercel.app
    vercel env add NEXT_PUBLIC_SITE_NAME NEXT_PUBLIC_PHONE NEXT_PUBLIC_PHONE_DISPLAY NEXT_PUBLIC_EMAIL NEXT_PUBLIC_WHATSAPP NEXT_PUBLIC_LOCATION
    ```
 4. Push database schema:
